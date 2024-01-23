@@ -34,26 +34,48 @@ driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com")
 wait=WebDriverWait(driver,100)
 
-target='"Group test"' # Name of the contact or group
+######################################## Variables ########################################
+target='Group test' # Name of the contact or group
+target2='"Group test"'
 person = "FMZ Shahril"
 tag_person = f"Hi @{person}"
 
 # with open('message.txt', 'r', encoding='utf8') as f:
 #     text_message = f.read()
-text_message = "Inevitably with a new year comes new changes. And while most changes in life are not within our control, for the little that are…Let's make the most of it. Here are a few happenings that are worth taking note of. Let’s plan for an amazing year ahead."
+text_message = "This is a test message."
+emoji = "👍🏼🤗💪🏽😊✨👇🏼"
 
-contact_path='//span[contains(@title,'+ target + ')]' # Search for the search path
-contact=wait.until(EC.presence_of_element_located((By.XPATH,contact_path))) # Search for contact
-contact.click() # Click on contact
+######################################## Search box ########################################
+# Find the search box, click the search box, type the name of the group, click the group
+search_box_path='//*[@id="side"]/div[1]/div/div[2]/div[2]/div/div[1]/p' # Find the search box element
+search_box = wait.until(EC.presence_of_element_located((By.XPATH, search_box_path)))
+search_box.click() # Click on search box
+search_box.send_keys(target) # Type the chat name
 
-message_box_path='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p' # Search for message box
-message_box=wait.until(EC.presence_of_element_located((By.XPATH,message_box_path))) # Search for message box
-# message_box.click() # Click on message box
-message_box.send_keys(tag_person + Keys.ENTER) # Select the person
+chat_name_path = '//span[contains(@title,'+ target2 + ')]' # Find the chat name element, have to have ""
+chat_name = wait.until(EC.presence_of_element_located((By.XPATH, chat_name_path)))
+chat_name.click()
+
+######################################## In group message ########################################
+message_box_path='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p' # Search for message box element
+message_box=wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
 message_box.click() # Click on message box
-message_box.send_keys(Keys.SHIFT, Keys.ENTER) # New line
-message_box.send_keys(Keys.SHIFT, Keys.ENTER) # New line
-message_box.send_keys(text_message, Keys.ENTER) # Send message
+# text_element = driver_trader.find_element_by_xpath(message_box_path)
+# Message
+message_box.send_keys("@" + Keys.ARROW_DOWN + Keys.ENTER) # For one person other than Mizi
+message_box.send_keys(":bodybuilder" + Keys.ARROW_RIGHT + Keys.ARROW_RIGHT + Keys.ENTER) # bodybuilder
+message_box.send_keys(":backhand" + Keys.ARROW_RIGHT + Keys.ARROW_RIGHT + Keys.ARROW_RIGHT + Keys.ENTER) # backhand index pointing down
+message_box.send_keys(Keys.ENTER) # Submit 
+
+# driver.execute_script("arguments[0].innerHTML = '{}'".format(emoji),text_element)
+# text_element.send_keys('.')
+# text_element.send_keys(Keys.BACKSPACE)
+
+# message_box.send_keys(tag_person + Keys.ENTER) # Enter message
+# message_box.click() # Click on message box
+# message_box.send_keys(Keys.SHIFT, Keys.ENTER) # New line
+# message_box.send_keys(Keys.SHIFT, Keys.ENTER) # New line
+# message_box.send_keys(text_message, Keys.ENTER) # Send message
 
 
 # Method 3:
