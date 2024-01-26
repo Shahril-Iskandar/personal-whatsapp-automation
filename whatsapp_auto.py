@@ -36,7 +36,16 @@ driver.get("https://web.whatsapp.com")
 wait=WebDriverWait(driver,100)
 
 ######################################## Variables ########################################
-contact_list =['Group test','FMZ Shahril']
+
+group_name = []
+with open('groupnames.txt', 'r') as file:
+    # Iterate through each line in the file
+    for line in file:
+        # Print each name (assuming each name is on a separate line)
+        group_name.append(line.strip())
+        print(line.strip())
+
+contact_list = ['Group test','FMZ Shahril']
 contact_list_2 = [f'"{item}"' for item in contact_list]
 file_to_sent = ""
 
@@ -94,7 +103,6 @@ def emoji_thumbsup():
 # message_box.send_keys(Keys.ENTER) # New line
 
 ######################################## Sending message ########################################
-
 for i in range(len(contact_list)):
     # Find the search box, click the search box, type the name of the group, click the group
     search_box_path='//*[@id="side"]/div[1]/div/div[2]/div[2]/div/div[1]/p' # Find the search box element

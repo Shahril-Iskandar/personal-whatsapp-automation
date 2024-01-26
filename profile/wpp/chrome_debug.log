@@ -1,5 +1,17 @@
-[14988:16144:0126/163426.052:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.225 (not a warning)
-[14988:16144:0126/163426.128:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
-[14988:16144:0126/163426.128:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
-[14988:16144:0126/163427.102:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
-[14988:16144:0126/163551.354:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[1916:26236:0126/173110.580:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.225 (not a warning)
+[1916:26236:0126/173110.945:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
+[1916:26236:0126/173110.946:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
+[1916:26236:0126/173115.711:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[1916:26948:0126/173115.863:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:27984:0126/173125.867:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26948:0126/173215.926:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26948:0126/173235.964:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:23692:0126/173245.988:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26948:0126/173255.996:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26832:0126/173836.601:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26236:0126/174030.598:WARNING:CONSOLE(1)] "Fallback triggered https://web.whatsapp.com/WAWebWorker.74601c95685d79200b54.worker.js.map [object Object]", source: devtools://devtools/bundled/devtools-frontend/front_end/core/sdk/sdk.js (1)
+[1916:26948:0126/174116.861:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26948:0126/174146.922:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26948:0126/174156.934:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26948:0126/174211.956:WARNING:page_discarding_helper.cc(126)] Discarding multiple pages with target (kb): 0
+[1916:26236:0126/174642.171:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.

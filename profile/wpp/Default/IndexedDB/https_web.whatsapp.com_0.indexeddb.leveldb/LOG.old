@@ -1,25 +1,3 @@
-2024/01/26-16:13:28.589 f44 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/26-16:13:28.589 f44 Recovering log #383
-2024/01/26-16:13:28.648 f44 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000383.log 
-2024/01/26-16:13:51.291 6b14 Level-0 table #394: started
-2024/01/26-16:13:51.324 6b14 Level-0 table #394: 1394176 bytes OK
-2024/01/26-16:13:51.325 6b14 Delete type=0 #383
-2024/01/26-16:13:51.354 5fb4 Compacting 1@1 + 7@2 files
-2024/01/26-16:13:51.436 5fb4 Generated table #395@1: 88057 keys, 2239579 bytes
-2024/01/26-16:13:51.492 5fb4 Generated table #396@1: 35191 keys, 2311669 bytes
-2024/01/26-16:13:51.527 5fb4 Generated table #397@1: 4821 keys, 2146846 bytes
-2024/01/26-16:13:51.578 5fb4 Generated table #398@1: 14170 keys, 2170688 bytes
-2024/01/26-16:13:51.656 5fb4 Generated table #399@1: 62904 keys, 2199278 bytes
-2024/01/26-16:13:51.732 5fb4 Generated table #400@1: 105802 keys, 2257961 bytes
-2024/01/26-16:13:51.818 5fb4 Generated table #401@1: 105729 keys, 2258704 bytes
-2024/01/26-16:13:51.827 5fb4 Generated table #402@1: 6344 keys, 149761 bytes
-2024/01/26-16:13:51.827 5fb4 Compacted 1@1 + 7@2 files => 15734486 bytes
-2024/01/26-16:13:51.828 5fb4 compacted to: files[ 0 0 8 0 0 0 0 ]
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #385
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #386
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #387
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #388
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #389
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #390
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #391
-2024/01/26-16:13:51.828 5fb4 Delete type=2 #394
+2024/01/26-16:34:26.881 3c54 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/26-16:34:26.883 3c54 Recovering log #393
+2024/01/26-16:34:26.908 3c54 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000393.log 

@@ -1,3 +1,72 @@
-2024/01/26-16:34:26.881 3c54 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/26-16:34:26.883 3c54 Recovering log #393
-2024/01/26-16:34:26.908 3c54 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000393.log 
+2024/01/26-17:31:15.436 bec Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/01/26-17:31:15.438 bec Recovering log #393
+2024/01/26-17:31:15.527 bec Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000393.log 
+2024/01/26-17:31:27.043 bec Level-0 table #405: started
+2024/01/26-17:31:27.105 bec Level-0 table #405: 1566235 bytes OK
+2024/01/26-17:31:27.108 bec Delete type=0 #393
+2024/01/26-17:31:27.643 bec Compacting 1@1 + 8@2 files
+2024/01/26-17:31:27.806 bec Generated table #406@1: 87960 keys, 2238405 bytes
+2024/01/26-17:31:27.931 bec Generated table #407@1: 38426 keys, 2350795 bytes
+2024/01/26-17:31:27.989 bec Generated table #408@1: 1695 keys, 2135167 bytes
+2024/01/26-17:31:28.102 bec Generated table #409@1: 17283 keys, 2182271 bytes
+2024/01/26-17:31:28.236 bec Generated table #410@1: 52508 keys, 2185326 bytes
+2024/01/26-17:31:28.409 bec Generated table #411@1: 105776 keys, 2257680 bytes
+2024/01/26-17:31:28.597 bec Generated table #412@1: 105684 keys, 2258051 bytes
+2024/01/26-17:31:28.637 bec Generated table #413@1: 17629 keys, 390750 bytes
+2024/01/26-17:31:28.637 bec Compacted 1@1 + 8@2 files => 15998445 bytes
+2024/01/26-17:31:28.638 bec compacted to: files[ 0 0 8 0 0 0 0 ]
+2024/01/26-17:31:28.639 bec Delete type=2 #395
+2024/01/26-17:31:28.639 bec Delete type=2 #396
+2024/01/26-17:31:28.640 bec Delete type=2 #397
+2024/01/26-17:31:28.640 bec Delete type=2 #398
+2024/01/26-17:31:28.640 bec Delete type=2 #399
+2024/01/26-17:31:28.641 bec Delete type=2 #400
+2024/01/26-17:31:28.641 bec Delete type=2 #401
+2024/01/26-17:31:28.641 bec Delete type=2 #402
+2024/01/26-17:31:28.642 bec Delete type=2 #405
+2024/01/26-17:43:38.799 bec Level-0 table #415: started
+2024/01/26-17:43:38.840 bec Level-0 table #415: 1423736 bytes OK
+2024/01/26-17:43:38.843 bec Delete type=0 #404
+2024/01/26-17:43:40.027 bec Compacting 1@1 + 8@2 files
+2024/01/26-17:43:40.103 bec Generated table #416@1: 87824 keys, 2238441 bytes
+2024/01/26-17:43:40.168 bec Generated table #417@1: 42070 keys, 2389711 bytes
+2024/01/26-17:43:40.195 bec Generated table #418@1: 1442 keys, 2140527 bytes
+2024/01/26-17:43:40.252 bec Generated table #419@1: 17296 keys, 2186329 bytes
+2024/01/26-17:43:40.305 bec Generated table #420@1: 43091 keys, 2172410 bytes
+2024/01/26-17:43:40.404 bec Generated table #421@1: 105727 keys, 2257573 bytes
+2024/01/26-17:43:40.508 bec Generated table #422@1: 105533 keys, 2258175 bytes
+2024/01/26-17:43:40.545 bec Generated table #423@1: 29379 keys, 649052 bytes
+2024/01/26-17:43:40.545 bec Compacted 1@1 + 8@2 files => 16292218 bytes
+2024/01/26-17:43:40.547 bec compacted to: files[ 0 0 8 0 0 0 0 ]
+2024/01/26-17:45:41.056 bec Level-0 table #425: started
+2024/01/26-17:45:41.082 bec Level-0 table #425: 1563692 bytes OK
+2024/01/26-17:45:41.083 bec Delete type=2 #406
+2024/01/26-17:45:41.084 bec Delete type=2 #407
+2024/01/26-17:45:41.084 bec Delete type=2 #408
+2024/01/26-17:45:41.084 bec Delete type=2 #409
+2024/01/26-17:45:41.084 bec Delete type=2 #410
+2024/01/26-17:45:41.085 bec Delete type=2 #411
+2024/01/26-17:45:41.086 bec Delete type=2 #412
+2024/01/26-17:45:41.086 bec Delete type=2 #413
+2024/01/26-17:45:41.086 bec Delete type=0 #414
+2024/01/26-17:45:41.086 bec Delete type=2 #415
+2024/01/26-17:45:41.603 bec Compacting 1@1 + 8@2 files
+2024/01/26-17:45:41.671 bec Generated table #426@1: 86640 keys, 2236395 bytes
+2024/01/26-17:45:41.734 bec Generated table #427@1: 45402 keys, 2479067 bytes
+2024/01/26-17:45:41.763 bec Generated table #428@1: 1530 keys, 2142403 bytes
+2024/01/26-17:45:41.812 bec Generated table #429@1: 17025 keys, 2185562 bytes
+2024/01/26-17:45:41.851 bec Generated table #430@1: 30880 keys, 2156287 bytes
+2024/01/26-17:45:41.930 bec Generated table #431@1: 105869 keys, 2258667 bytes
+2024/01/26-17:45:42.009 bec Generated table #432@1: 105366 keys, 2256718 bytes
+2024/01/26-17:45:42.039 bec Generated table #433@1: 42038 keys, 924151 bytes
+2024/01/26-17:45:42.040 bec Compacted 1@1 + 8@2 files => 16639250 bytes
+2024/01/26-17:45:42.040 bec compacted to: files[ 0 0 8 0 0 0 0 ]
+2024/01/26-17:45:42.041 bec Delete type=2 #416
+2024/01/26-17:45:42.042 bec Delete type=2 #417
+2024/01/26-17:45:42.042 bec Delete type=2 #418
+2024/01/26-17:45:42.042 bec Delete type=2 #419
+2024/01/26-17:45:42.042 bec Delete type=2 #420
+2024/01/26-17:45:42.042 bec Delete type=2 #421
+2024/01/26-17:45:42.042 bec Delete type=2 #422
+2024/01/26-17:45:42.042 bec Delete type=2 #423
+2024/01/26-17:45:42.042 bec Delete type=2 #425
