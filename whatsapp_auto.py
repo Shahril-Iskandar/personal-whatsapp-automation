@@ -7,6 +7,7 @@ from selenium.webdriver.common.keys import Keys
 # from selenium.webdriver.chrome.service import Service
 # from selenium.webdriver.chrome.options import Options
 # from webdriver_manager.chrome import ChromeDriverManager
+import time
 
 # options = Options()
 # options.add_experimental_option("detach", True)
@@ -25,173 +26,138 @@ from selenium.webdriver.common.keys import Keys
 # # driver.get("https://web.whatsapp.com/")
 
 dir_path = os.getcwd()
-profile = os.path.join(dir_path, "profile", "wpp")
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
-options.add_argument(
-    r"user-data-dir={}".format(profile))
+
+profile = os.path.join(dir_path, "profile", "wpp")
+options.add_argument(r"user-data-dir={}".format(profile))
 driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com")
 wait=WebDriverWait(driver,100)
 
 ######################################## Variables ########################################
-target='Group test' # Name of the contact or group
-target2='"Group test"'
-person = "FMZ Shahril"
-tag_person = f"Hi @{person}"
+contact_list =['Group test','FMZ Shahril']
+contact_list_2 = [f'"{item}"' for item in contact_list]
+file_to_sent = ""
 
-# with open('message.txt', 'r', encoding='utf8') as f:
-#     text_message = f.read()
-text_message = "This is a test message."
-emoji = "👍🏼🤗💪🏽😊✨👇🏼"
+######################################## Functions ########################################
+# 💪🏽
+def emoji_muscle():
+    message_box.send_keys(" " + ":bodybuilder" + Keys.ENTER)
+    time.sleep(.5)
+    
+# 👇🏼
+def emoji_pointdown():
+    message_box.send_keys(" " + ":backhand")
+    time.sleep(.5)
+    message_box.send_keys(Keys.ARROW_RIGHT*3 + Keys.ENTER) # backhand index pointing down
+    time.sleep(.5)
 
-######################################## Search box ########################################
-# Find the search box, click the search box, type the name of the group, click the group
-search_box_path='//*[@id="side"]/div[1]/div/div[2]/div[2]/div/div[1]/p' # Find the search box element
-search_box = wait.until(EC.presence_of_element_located((By.XPATH, search_box_path)))
-search_box.click() # Click on search box
-search_box.send_keys(target) # Type the chat name
+# 🤗
+def emoji_hugging():
+    message_box.send_keys(" " + ":hugging" + Keys.ENTER)
+    time.sleep(.5)
 
-chat_name_path = '//span[contains(@title,'+ target2 + ')]' # Find the chat name element, have to have ""
-chat_name = wait.until(EC.presence_of_element_located((By.XPATH, chat_name_path)))
-chat_name.click()
+# 😊
+def emoji_smiley():
+    message_box.send_keys(" " + ":happy")
+    time.sleep(.5)
+    message_box.send_keys(Keys.ARROW_RIGHT*5 + Keys.ENTER) 
+    time.sleep(.5)
 
-######################################## In group message ########################################
-message_box_path='//*[@id="main"]/footer/div[1]/div/span[2]/div/div[2]/div[1]/div/div[1]/p' # Search for message box element
-message_box=wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
-message_box.click() # Click on message box
-# text_element = driver_trader.find_element_by_xpath(message_box_path)
-# Message
-message_box.send_keys("@" + Keys.ARROW_DOWN + Keys.ENTER) # For one person other than Mizi
-message_box.send_keys(":bodybuilder" + Keys.ARROW_RIGHT + Keys.ARROW_RIGHT + Keys.ENTER) # bodybuilder
-message_box.send_keys(":backhand" + Keys.ARROW_RIGHT + Keys.ARROW_RIGHT + Keys.ARROW_RIGHT + Keys.ENTER) # backhand index pointing down
-message_box.send_keys(Keys.ENTER) # Submit 
+# ✨
+def emoji_sparkles():
+    message_box.send_keys(" " + ":sparkles" + Keys.ENTER)
+    time.sleep(.5)
 
-# driver.execute_script("arguments[0].innerHTML = '{}'".format(emoji),text_element)
-# text_element.send_keys('.')
-# text_element.send_keys(Keys.BACKSPACE)
+# 👍🏼
+def emoji_thumbsup():
+    message_box.send_keys(" " + ":thumbs up" + Keys.ENTER)
+    time.sleep(.5)
 
-# message_box.send_keys(tag_person + Keys.ENTER) # Enter message
+# Another method to add emoji   :
+# emoji_icon_path = '//span[@data-icon="smiley"]'
+# emoji_icon = wait.until(EC.presence_of_element_located((By.XPATH,emoji_icon_path)))
+# emoji_icon.click()
+
+# emoji_search_path = '//input[@title="Search Emoji"]'
+# emoji_search = wait.until(EC.presence_of_element_located((By.XPATH,emoji_search_path)))
+# emoji_search.click()
+# # driver.implicitly_wait(2)
+# emoji_search.send_keys('bodybuilder' + Keys.ENTER)
+# # emoji_search.send_keys(Keys.ENTER)
+
+# close_emoji_path = '//span[@data-icon="x"]'
+# close_emoji = wait.until(EC.presence_of_element_located((By.XPATH,close_emoji_path)))
+# close_emoji.click()
 # message_box.click() # Click on message box
-# message_box.send_keys(Keys.SHIFT, Keys.ENTER) # New line
-# message_box.send_keys(Keys.SHIFT, Keys.ENTER) # New line
-# message_box.send_keys(text_message, Keys.ENTER) # Send message
+# message_box.send_keys(Keys.ENTER) # New line
 
+######################################## Sending message ########################################
 
-# Method 3:
-# import pywhatkit as pwk
-# pwk.sendwhatmsg("+6596561830", "Test", 19, 51)
+for i in range(len(contact_list)):
+    # Find the search box, click the search box, type the name of the group, click the group
+    search_box_path='//*[@id="side"]/div[1]/div/div[2]/div[2]/div/div[1]/p' # Find the search box element
+    search_box = wait.until(EC.presence_of_element_located((By.XPATH, search_box_path)))
+    search_box.click() # Click on search box
+    search_box.send_keys(contact_list[i]) # Type the chat name
+    time.sleep(1)
 
-# Method 4:
-# ## IMPORTS ##
-# from selenium import webdriver
-# from selenium.webdriver.edge.service import Service
-# from selenium.webdriver.common.by import By
-# from selenium.webdriver.support.ui import WebDriverWait
-# from urllib.parse import quote
-# from re import fullmatch
-# import time
+    chat_name_path = '//span[contains(@title,'+ contact_list_2[i] + ')]' # Find the chat name element, have to have ""
+    chat_name = wait.until(EC.presence_of_element_located((By.XPATH, chat_name_path)))
+    chat_name.click()
+    time.sleep(1)
 
-# # Driver Managers
-# from webdriver_manager.microsoft import EdgeChromiumDriverManager
-# from webdriver_manager.chrome import ChromeDriverManager
-# from webdriver_manager.firefox import GeckoDriverManager
-# from webdriver_manager.opera import OperaDriverManager
-# from webdriver_manager.core.os_manager import ChromeType
+    message_box_path = '//div[@title="Type a message"]'
+    message_box = wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
 
-# ## RUNTIME VARIABLES ##
-# """
-# Place the associated driver manager above depending on the browser you want to launch.
-# Selenium supports the following:
-# - Chrome
-# - Edge
-# - Firefox
-# - Opera
-# - Brave
+    # documents_path = '//input[@accept="*"]'
+    # documents_box = wait.until(EC.presence_of_element_located((By.XPATH,documents_path)))
 
-# Below the script is configured set to use an Edge browser. Be sure to change it according to the browser you use.
-# """
-# browser = "Chrome"
+    message_box.click() # Click on message box
+    message_box.send_keys("Hi " + "@" + Keys.ARROW_DOWN + Keys.ENTER) # Tag person: For one person other than Mizi
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
 
-# ## INPUT ##
-# """
-# Takes input related to sending a text from the recipient phone number and message.
-# """
-# print("\n")
-# print("Write recipient phone number in format +[Country Code][Area Code][Rest]:")
-# phone_no = str(input())
-# print("\nWrite message:")
-# message = str(input())
+    ######################################## Message ########################################
+    message_one = "Inevitably with a new year comes new changes. And while most changes in life are not within our control, for the little that are…Let’s make the most of it"
+    message_two = "Here are a few happenings that are worth taking note of. Let’s plan for an amazing year ahead."
 
-# ## HELPERS ##
-# """
-# Functions that do self explanatory tasks
-# """
-# def modify_number(phone_no):
-#     phone_no = phone_no.replace(" ", "").replace("-", "").replace("(", "").replace(")", "")
-#     return phone_no
+    message_box.send_keys(message_one)
+    emoji_muscle()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(message_two)
+    emoji_smiley()
+    emoji_sparkles()
 
-# def validate_number(phone_no):
-#     def check_number(number):
-#         return "+" in number or "_" in number
+    if not file_to_sent:
+        print("No file to sent")
+        message_box.send_keys(Keys.ENTER) # Submit
+    else:
+        # Add attachment
+        attachment_path = '//span[@data-icon="attach-menu-plus"]'
+        attachment_box = wait.until(EC.presence_of_element_located((By.XPATH,attachment_path)))
+        attachment_box.click()
+        time.sleep(1)
+        # Add image
+        images_path = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
+        images_box = wait.until(EC.presence_of_element_located((By.XPATH,images_path)))
+        images_box.send_keys(file_to_sent)
+        time.sleep(1)
+        # sent_image_path = '//div[@class="g0rxnol2"]'
+        sent_image_path = '//span[@data-icon="send"]'
+        sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
+        sent_image.click()
 
-#     if not check_number(number=phone_no):
-#         raise Exception("Country Code Missing in Phone Number!")
+    print('Message send to ' + contact_list[i] + ' successfully.')
+    # Back icon
+    back_path = '//span[@data-icon="search"]'
+    back_icon = wait.until(EC.presence_of_element_located((By.XPATH,back_path)))
+    back_icon.click()
+    time.sleep(1)
 
-#     if not fullmatch(r"^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$", phone_no):
-#         raise Exception("Invalid Phone Number.")
-#     return True
-
-# def set_browser(browser):
-#     install = lambda dm : dm.install()
-#     try:
-#         if (browser == "Edge"):
-#             bm = EdgeChromiumDriverManager()
-#             return webdriver.Edge(service=Service(install(bm)))
-#         elif (browser == "Chrome"):
-#             bm = ChromeDriverManager()
-#             return webdriver.Chrome(service=Service(install(bm)))
-#         elif (browser == "Firefox"):
-#             bm = GeckoDriverManager()
-#             return webdriver.Firefox(service=Service(install(bm)))
-#         elif (browser == "Opera"):
-#             bm = OperaDriverManager()
-#             return webdriver.Opera(service=Service(install(bm)))
-#         elif (browser == "Brave"):
-#             bm = ChromeDriverManager(chrome_type=ChromeType.BRAVE)
-#             return webdriver.Chrome(service=Service(install(bm)))
-#     except:
-#         raise Exception("Browser not found")
-
-# ## SCRIPT ##
-# """
-# Uses Selenium to send a text
-# """
-# phone_no = modify_number(phone_no)
-# if (validate_number(phone_no)):
-
-#     # Loads browser
-#     driver = set_browser(browser)
-    
-#     # Goes to site
-#     site = f"https://web.whatsapp.com/send?phone={phone_no}&text={quote(message)}"
-#     driver.get(site)
-    
-#     # Uses XPATH to find a send button
-#     element = lambda d : d.find_elements(by=By.XPATH, value="//div//button/span[@data-icon='send']")
-    
-#     # Waits until send is found (in case of login)
-#     loaded = WebDriverWait(driver, 1000).until(method=element, message="User never signed in")
-    
-#     # Loads a send button
-#     driver.implicitly_wait(10)
-#     send = element(driver)[0]
-    
-#     # Clicks the send button
-#     send.click()
-    
-#     # Sleeps for 5 secs to allow time for text to send before closing window
-#     time.sleep(5) 
-    
-#     # Closes window
-#     driver.close()
+# message_box_path = '//span[@class="selectable-text copyable-text"]' 
+# message_box = wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
+# message_box.click()
+# message_box.send_keys(Keys.ENTER)

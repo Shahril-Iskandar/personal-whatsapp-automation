@@ -1,3 +1,6 @@
-2024/01/24-00:11:29.089 5978 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\Local Storage\leveldb/MANIFEST-000001
-2024/01/24-00:11:29.090 5978 Recovering log #11
-2024/01/24-00:11:29.096 5978 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\Local Storage\leveldb/000011.log 
+2024/01/26-16:13:28.076 3848 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\Local Storage\leveldb/MANIFEST-000001
+2024/01/26-16:13:28.085 3848 Recovering log #32
+2024/01/26-16:13:28.091 3848 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\Local Storage\leveldb/000032.log 
+2024/01/26-16:22:28.833 3848 Level-0 table #36: started
+2024/01/26-16:22:28.854 3848 Level-0 table #36: 35495 bytes OK
+2024/01/26-16:22:28.855 3848 Delete type=0 #32

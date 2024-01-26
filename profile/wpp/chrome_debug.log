@@ -1,5 +1,5 @@
-[7016:25484:0124/001223.470:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.225 (not a warning)
-[7016:25484:0124/001223.532:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
-[7016:25484:0124/001223.532:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
-[7016:25484:0124/001224.459:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
-[7016:25484:0124/001249.404:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
+[14988:16144:0126/163426.052:WARNING:chrome_main_delegate.cc(667)] This is Chrome version 120.0.6099.225 (not a warning)
+[14988:16144:0126/163426.128:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(168) Starting CBCM Controller Initialization
+[14988:16144:0126/163426.128:INFO:policy_logger.cc(144)] :components\enterprise\browser\controller\chrome_browser_cloud_management_controller.cc(196) No machine level policy manager exists.
+[14988:16144:0126/163427.102:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[14988:16144:0126/163551.354:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
