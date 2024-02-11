@@ -1,3 +1,28 @@
-2024/01/26-16:34:26.881 3c54 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
-2024/01/26-16:34:26.883 3c54 Recovering log #393
-2024/01/26-16:34:26.908 3c54 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000393.log 
+2024/02/06-21:52:20.892 3da4 Reusing MANIFEST C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/02/06-21:52:20.894 3da4 Recovering log #522
+2024/02/06-21:52:21.032 3da4 Reusing old log C:\Users\14000\OneDrive - Nanyang Technological University\Documents\GitHub Repositories\fmz-whatsapp\profile\wpp\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000522.log 
+2024/02/06-21:52:51.526 39e0 Level-0 table #535: started
+2024/02/06-21:52:51.563 39e0 Level-0 table #535: 1321683 bytes OK
+2024/02/06-21:52:51.565 39e0 Delete type=0 #522
+2024/02/06-21:52:53.213 398c Compacting 1@1 + 9@2 files
+2024/02/06-21:52:53.288 398c Generated table #536@1: 86494 keys, 2237433 bytes
+2024/02/06-21:52:53.359 398c Generated table #537@1: 68493 keys, 2444580 bytes
+2024/02/06-21:52:53.403 398c Generated table #538@1: 7836 keys, 2359175 bytes
+2024/02/06-21:52:53.436 398c Generated table #539@1: 7596 keys, 2159973 bytes
+2024/02/06-21:52:53.480 398c Generated table #540@1: 12858 keys, 2157107 bytes
+2024/02/06-21:52:53.570 398c Generated table #541@1: 62367 keys, 2198075 bytes
+2024/02/06-21:52:53.674 398c Generated table #542@1: 105200 keys, 2256664 bytes
+2024/02/06-21:52:53.772 398c Generated table #543@1: 105044 keys, 2256357 bytes
+2024/02/06-21:52:53.795 398c Generated table #544@1: 24299 keys, 560560 bytes
+2024/02/06-21:52:53.795 398c Compacted 1@1 + 9@2 files => 18629924 bytes
+2024/02/06-21:52:53.796 398c compacted to: files[ 0 0 9 0 0 0 0 ]
+2024/02/06-21:52:53.797 398c Delete type=2 #524
+2024/02/06-21:52:53.797 398c Delete type=2 #525
+2024/02/06-21:52:53.797 398c Delete type=2 #526
+2024/02/06-21:52:53.797 398c Delete type=2 #527
+2024/02/06-21:52:53.797 398c Delete type=2 #528
+2024/02/06-21:52:53.797 398c Delete type=2 #529
+2024/02/06-21:52:53.797 398c Delete type=2 #530
+2024/02/06-21:52:53.797 398c Delete type=2 #531
+2024/02/06-21:52:53.797 398c Delete type=2 #532
+2024/02/06-21:52:53.797 398c Delete type=2 #535

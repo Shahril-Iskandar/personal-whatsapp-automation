@@ -52,7 +52,8 @@ with open('testgroup.txt') as f:
         contact_dict[key] = int(value) # Value is the number of clients in the group
 
 # contact_list_2 = [f'"{item}"' for item in contact_list]
-filepath_to_sent = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_investinginAI.jpeg"
+attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_thegiftthatkeepsgiving.jpeg"
+attachment_two = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\info_thegiftthatkeepsgiving.jpeg"
 
 ######################################## Functions ########################################
 # 💪🏽
@@ -109,8 +110,19 @@ def emoji_lightbulb():
     message_box.send_keys(":light bulb" + Keys.ENTER)
     time.sleep(.5)
 
+# 
 def emoji_new():
     message_box.send_keys(":new" + Keys.ENTER)
+    time.sleep(.5)
+
+# 😳
+def emoji_flushedFace():
+    message_box.send_keys(":flushed" + Keys.ENTER)
+    time.sleep(.5)
+
+# 🤔
+def emoji_thinking():
+    message_box.send_keys(":thinking" + Keys.ENTER)
     time.sleep(.5)
 
 # Another method to add emoji   :
@@ -177,35 +189,32 @@ for key, value in contact_dict.items():
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     ######################################## Message ########################################
-    message_one = "Financial Symposium: Investing In Artificial Intelligence, presented by Allianz Global Investors on 22 Feb"
-    message_two = " Proud to present you this premier launch* to explore the investing opportunities in the Artificial Intelligence with an **onboarding global fund house Allianz GI** in late Feb."
-    message_three = "2023 proved to be a pivotal year for artificial intelligence companies. A better-than-expected economic backdrop was conducive to stock returns across the Al investment universe. The key catalyst was the rapid adoption of ChatGPT, creating a tailwind for companies across the Al value chain. Al's impact on every industry is starting to take hold."
-    message_four = "Registration is now open with the full synopsis in the link, start inviting your prospective clients today with your affiliate RSVP link (retrieve from Merlin chatbot)!"
-
-    emoji_girlcomputer()
-    emoji_new()
+    message_one = "What if you work just for a day but get paid for the rest of your life?"
+    message_two = "In our upcoming I’preciate Islamic event tomorrow: *the gift that keeps on giving*, panels will be debunking myths when it comes finance from an Islamic perspective, and will be sharing how our assets can be useful not just for this life, but especially for the hereafter"
+    message_three = "Seats were full but we opened up another last 10 slots for grabs by noon tomorrow! Share it with people you care about and claim your slots here"
+    message_four = "https://iammerlin.co/ipreciate/Mizi_khamsani "
+    
     message_box.send_keys(" ")
     message_box.send_keys(message_one)
+    message_box.send_keys(" ")
+    emoji_flushedFace()
+    emoji_thinking()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(message_two)
     message_box.send_keys(" ")
     emoji_sparkles()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    emoji_geek()
-    message_box.send_keys(" ")
-    message_box.send_keys(message_two)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_three)
-    emoji_fire()
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    emoji_lightbulb()
     message_box.send_keys(" ")
+    emoji_smiley()
+    emoji_pointdown()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_four)
-    message_box.send_keys(" ")
-    emoji_hugging()
 
-    if not filepath_to_sent:
+    if not attachment_one:
         print("No file to sent")
         message_box.send_keys(Keys.ENTER) # Submit
     else:
@@ -218,12 +227,34 @@ for key, value in contact_dict.items():
         images_path = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
         # images_path = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/ul/div/div[2]/li/div/input'
         images_box = wait.until(EC.presence_of_element_located((By.XPATH,images_path)))
-        images_box.send_keys(filepath_to_sent)
-        time.sleep(5)
+        images_box.send_keys(attachment_one)
+        time.sleep(3)
         # sent_image_path = '//div[@class="g0rxnol2"]'
         sent_image_path = '//span[@data-icon="send"]'
         sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
         sent_image.click()
+
+    if not attachment_two:
+        print("No file to sent")
+        message_box.send_keys(Keys.ENTER) # Submit
+    else:
+        # Add attachment
+        attachment_path = '//span[@data-icon="attach-menu-plus"]'
+        attachment_box = wait.until(EC.presence_of_element_located((By.XPATH,attachment_path)))
+        attachment_box.click()
+        time.sleep(1)
+        # Add image
+        images_path = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
+        # images_path = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/ul/div/div[2]/li/div/input'
+        images_box = wait.until(EC.presence_of_element_located((By.XPATH,images_path)))
+        images_box.send_keys(attachment_two)
+        time.sleep(3)
+        # sent_image_path = '//div[@class="g0rxnol2"]'
+        sent_image_path = '//span[@data-icon="send"]'
+        sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
+        sent_image.click()
+
+    message_box.send_keys("Here's the program outline and more details of the exclusive perks for attendees.")
 
     print('Message send to ' + key + ' successfully.')
     # Back icon
