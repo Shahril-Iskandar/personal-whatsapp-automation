@@ -1,0 +1,6 @@
+.conda/
+.venv/
+profile/
+__pycache__/
+groupnames.txt
+message.txt

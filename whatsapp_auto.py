@@ -4,26 +4,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys
-# from selenium.webdriver.chrome.service import Service
-# from selenium.webdriver.chrome.options import Options
-# from webdriver_manager.chrome import ChromeDriverManager
 import time
-
-# options = Options()
-# options.add_experimental_option("detach", True)
-# driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
-#                           options=options)
-
-# driver.get("https://web.whatsapp.com/")
-
-# Method 2:
-# options=webdriver.ChromeOptions()
-# options.add_experimental_option("detach", True)
-# options.add_argument("--user-data-dir=C:\\Users\\14000\\AppData\\Local\\Google\\Chrome\\User Data")
-# ser = Service("./chromedriver.exe")
-# driver = webdriver.Chrome(service=ser,options=options)
-
-# # driver.get("https://web.whatsapp.com/")
 
 dir_path = os.getcwd()
 options = webdriver.ChromeOptions()
@@ -36,14 +17,6 @@ driver.get("https://web.whatsapp.com")
 wait=WebDriverWait(driver,100)
 
 ######################################## Variables ########################################
-
-# group_names = []
-# with open('groupnames.txt', 'r') as file:
-#     # Iterate through each line in the file
-#     for line in file:
-#         # Print each name (assuming each name is on a separate line)
-#         group_names.append(line.strip())
-#         # print(line.strip())
 
 contact_dict = {}
 with open('testgroup.txt') as f:
@@ -124,24 +97,6 @@ def emoji_flushedFace():
 def emoji_thinking():
     message_box.send_keys(":thinking" + Keys.ENTER)
     time.sleep(.5)
-
-# Another method to add emoji   :
-# emoji_icon_path = '//span[@data-icon="smiley"]'
-# emoji_icon = wait.until(EC.presence_of_element_located((By.XPATH,emoji_icon_path)))
-# emoji_icon.click()
-
-# emoji_search_path = '//input[@title="Search Emoji"]'
-# emoji_search = wait.until(EC.presence_of_element_located((By.XPATH,emoji_search_path)))
-# emoji_search.click()
-# # driver.implicitly_wait(2)
-# emoji_search.send_keys('bodybuilder' + Keys.ENTER)
-# # emoji_search.send_keys(Keys.ENTER)
-
-# close_emoji_path = '//span[@data-icon="x"]'
-# close_emoji = wait.until(EC.presence_of_element_located((By.XPATH,close_emoji_path)))
-# close_emoji.click()
-# message_box.click() # Click on message box
-# message_box.send_keys(Keys.ENTER) # New line
 
 ######################################## Sending message ########################################
 for key, value in contact_dict.items():
@@ -234,6 +189,7 @@ for key, value in contact_dict.items():
         sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
         sent_image.click()
 
+    # Send another attachment
     if not attachment_two:
         print("No file to sent")
         message_box.send_keys(Keys.ENTER) # Submit
@@ -262,8 +218,3 @@ for key, value in contact_dict.items():
     back_icon = wait.until(EC.presence_of_element_located((By.XPATH,back_path)))
     back_icon.click()
     time.sleep(1)
-
-# message_box_path = '//span[@class="selectable-text copyable-text"]' 
-# message_box = wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
-# message_box.click()
-# message_box.send_keys(Keys.ENTER)
