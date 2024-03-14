@@ -19,14 +19,14 @@ wait=WebDriverWait(driver,100)
 ######################################## Variables ########################################
 
 contact_dict = {}
-with open('testgroup.txt') as f:
+with open('groupnames.txt') as f:
     for line in f:
         key, value = line.strip().split(', ') 
         contact_dict[key] = int(value) # Value is the number of clients in the group
 
 # contact_list_2 = [f'"{item}"' for item in contact_list]
-attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_thegiftthatkeepsgiving.jpeg"
-attachment_two = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\info_thegiftthatkeepsgiving.jpeg"
+attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_womenpower.jpeg"
+attachment_two = ""
 
 ######################################## Functions ########################################
 # 💪🏽
@@ -98,6 +98,13 @@ def emoji_thinking():
     message_box.send_keys(":thinking" + Keys.ENTER)
     time.sleep(.5)
 
+# 💎
+def emoji_diamond():
+    message_box.send_keys(":diamond")
+    time.sleep(.5)
+    message_box.send_keys(Keys.ARROW_RIGHT + Keys.ENTER) 
+    time.sleep(.5)
+
 ######################################## Sending message ########################################
 for key, value in contact_dict.items():
     # Find the search box, click the search box, type the name of the group, click the group
@@ -144,26 +151,23 @@ for key, value in contact_dict.items():
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     ######################################## Message ########################################
-    message_one = "What if you work just for a day but get paid for the rest of your life?"
-    message_two = "In our upcoming I’preciate Islamic event tomorrow: *the gift that keeps on giving*, panels will be debunking myths when it comes finance from an Islamic perspective, and will be sharing how our assets can be useful not just for this life, but especially for the hereafter"
-    message_three = "Seats were full but we opened up another last 10 slots for grabs by noon tomorrow! Share it with people you care about and claim your slots here"
+    message_one = "Women are like diamonds - resilient, brilliant, and formed under immense pressure."
+    message_two = "In conjunction with *Endometriosis Awareness Month*, let's celebrate their strength and raise awareness about the challenges they face. Our upcoming webinar: *Women's Power - Triump over fibroids, cysts and Endometriosis*, panels will be sharing insights on common women's health issues and discussing symptoms, treatments, and preventive actions for conditions that can affect women from their 20s onwards. It's an opportunity to gain valuable knowledge and support the ladies in our lives."
+    message_three = "Claim your spot now!"
     message_four = "https://iammerlin.co/ipreciate/Mizi_khamsani "
     
-    message_box.send_keys(" ")
     message_box.send_keys(message_one)
     message_box.send_keys(" ")
-    emoji_flushedFace()
-    emoji_thinking()
+    emoji_diamond()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_two)
     message_box.send_keys(" ")
-    emoji_sparkles()
+    emoji_muscle()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_three)
     message_box.send_keys(" ")
-    emoji_smiley()
     emoji_pointdown()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
@@ -210,7 +214,7 @@ for key, value in contact_dict.items():
         sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
         sent_image.click()
 
-    message_box.send_keys("Here's the program outline and more details of the exclusive perks for attendees.")
+    # message_box.send_keys("Here's the program outline and more details of the exclusive perks for attendees.")
 
     print('Message send to ' + key + ' successfully.')
     # Back icon
