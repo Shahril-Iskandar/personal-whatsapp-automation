@@ -25,7 +25,7 @@ with open('groupnames.txt') as f:
         contact_dict[key] = int(value) # Value is the number of clients in the group
 
 # contact_list_2 = [f'"{item}"' for item in contact_list]
-attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_womenpower.jpeg"
+attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_termplan.jpg"
 attachment_two = ""
 
 ######################################## Functions ########################################
@@ -70,7 +70,7 @@ def emoji_sparkles():
 
 # 👍🏼
 def emoji_thumbsup():
-    message_box.send_keys(":thumbs up" + Keys.ENTER)
+    message_box.send_keys(":good" + Keys.ENTER)
     time.sleep(.5)
 
 # 🔥
@@ -83,7 +83,7 @@ def emoji_lightbulb():
     message_box.send_keys(":light bulb" + Keys.ENTER)
     time.sleep(.5)
 
-# 
+# 🆕
 def emoji_new():
     message_box.send_keys(":new" + Keys.ENTER)
     time.sleep(.5)
@@ -98,11 +98,21 @@ def emoji_thinking():
     message_box.send_keys(":thinking" + Keys.ENTER)
     time.sleep(.5)
 
+# 🥺
+def emoji_sad():
+    message_box.send_keys(":sad" + Keys.ENTER)
+    time.sleep(.5)
+
 # 💎
 def emoji_diamond():
     message_box.send_keys(":diamond")
     time.sleep(.5)
     message_box.send_keys(Keys.ARROW_RIGHT + Keys.ENTER) 
+    time.sleep(.5)
+
+# 🛡️
+def emoji_shield():
+    message_box.send_keys(":shield" + Keys.ENTER)
     time.sleep(.5)
 
 ######################################## Sending message ########################################
@@ -151,27 +161,36 @@ for key, value in contact_dict.items():
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     ######################################## Message ########################################
-    message_one = "Women are like diamonds - resilient, brilliant, and formed under immense pressure."
-    message_two = "In conjunction with *Endometriosis Awareness Month*, let's celebrate their strength and raise awareness about the challenges they face. Our upcoming webinar: *Women's Power - Triump over fibroids, cysts and Endometriosis*, panels will be sharing insights on common women's health issues and discussing symptoms, treatments, and preventive actions for conditions that can affect women from their 20s onwards. It's an opportunity to gain valuable knowledge and support the ladies in our lives."
-    message_three = "Claim your spot now!"
-    message_four = "https://iammerlin.co/ipreciate/Mizi_khamsani "
+    message_one = "“_Sadly everything good had to come to an end_”"
+    message_two = "The past few days, has been hectic for us as our exclusive *40% PERPETUAL discount* on protection plans is coming to an end."
+    message_three = "_For those who are already investing with us_, this is a great opportunity to *safeguard the growth* we've achieved together."
+    message_four = "And _for those who are already invested and protected_, perhaps you can be the reason why the *people that you care about* around you, is *protected* as well."
+    message_five = "Not sure if this is something u need? Or would like to know more? react to this message with a"
+    message_six = " and we’ll get back to you soonest possible!"
     
     message_box.send_keys(message_one)
     message_box.send_keys(" ")
-    emoji_diamond()
+    emoji_sad()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_two)
-    message_box.send_keys(" ")
-    emoji_muscle()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_three)
     message_box.send_keys(" ")
-    emoji_pointdown()
+    emoji_shield()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_four)
+    message_box.send_keys(" ")
+    emoji_smiley()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(message_five)
+    message_box.send_keys(" ")
+    emoji_thumbsup()
+    message_box.send_keys(" ")
+    message_box.send_keys(message_six)
 
     if not attachment_one:
         print("No file to sent")
