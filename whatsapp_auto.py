@@ -25,7 +25,7 @@ with open('groupnames.txt') as f:
         contact_dict[key] = int(value) # Value is the number of clients in the group
 
 # contact_list_2 = [f'"{item}"' for item in contact_list]
-attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_termplan.jpg"
+attachment_one = ""
 attachment_two = ""
 
 ######################################## Functions ########################################
@@ -161,35 +161,30 @@ for key, value in contact_dict.items():
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     ######################################## Message ########################################
-    message_one = "“_Sadly everything good had to come to an end_”"
-    message_two = "The past few days, has been hectic for us as our exclusive *40% PERPETUAL discount* on protection plans is coming to an end."
-    message_three = "_For those who are already investing with us_, this is a great opportunity to *safeguard the growth* we've achieved together."
-    message_four = "And _for those who are already invested and protected_, perhaps you can be the reason why the *people that you care about* around you, is *protected* as well."
-    message_five = "Not sure if this is something u need? Or would like to know more? react to this message with a"
-    message_six = " and we’ll get back to you soonest possible!"
+    # message_one = "“_Sadly everything good had to come to an end_”"
+    message_two = "You guys might have heard and redeemed this. For those who have not heard of, there is *$300 enhanced Climate Vouchers* that can be redeemed by *_HDB households_* for buying Energy efficient items like Refrigerator, Washing machine, LED lights, etc."
+    message_three = "The last day to *redeem is by today*, and voucher is *valid for 3 years*."
+    message_four = "Visit https://signup.redeem.gov.sg/?lang=en-US to verify your eligibility and redeem your voucher if interested. "
+    message_five = "Visit https://www.climate-friendly-households.gov.sg/cv-faqs/ to clarify all your doubts."
+    message_six = "Only HDB flat owners are eligible. Log in and claim voucher today. Can be used later."
     
-    message_box.send_keys(message_one)
-    message_box.send_keys(" ")
-    emoji_sad()
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    # message_box.send_keys(message_one)
+    # message_box.send_keys(" ")
+    # emoji_sad()
+    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_two)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_three)
-    message_box.send_keys(" ")
-    emoji_shield()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_four)
-    message_box.send_keys(" ")
-    emoji_smiley()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_five)
-    message_box.send_keys(" ")
-    emoji_thumbsup()
-    message_box.send_keys(" ")
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_six)
 
     if not attachment_one:
