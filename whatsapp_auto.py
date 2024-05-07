@@ -19,13 +19,13 @@ wait=WebDriverWait(driver,100)
 ######################################## Variables ########################################
 
 contact_dict = {}
-with open('groupnames.txt') as f:
+with open('testgroup.txt') as f:
     for line in f:
         key, value = line.strip().split(', ') 
         contact_dict[key] = int(value) # Value is the number of clients in the group
 
 # contact_list_2 = [f'"{item}"' for item in contact_list]
-attachment_one = ""
+attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_braces.jpg"
 attachment_two = ""
 
 ######################################## Functions ########################################
@@ -115,6 +115,16 @@ def emoji_shield():
     message_box.send_keys(":shield" + Keys.ENTER)
     time.sleep(.5)
 
+# 😁
+def emoji_bigsmile():
+    message_box.send_keys(":teeth" + Keys.ENTER)
+    time.sleep(.5)
+
+# 🦷
+def emoji_tooth():
+    message_box.send_keys(":tooth" + Keys.ENTER)
+    time.sleep(.5)
+
 ######################################## Sending message ########################################
 for key, value in contact_dict.items():
     # Find the search box, click the search box, type the name of the group, click the group
@@ -161,31 +171,55 @@ for key, value in contact_dict.items():
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     ######################################## Message ########################################
-    # message_one = "“_Sadly everything good had to come to an end_”"
-    message_two = "You guys might have heard and redeemed this. For those who have not heard of, there is *$300 enhanced Climate Vouchers* that can be redeemed by *_HDB households_* for buying Energy efficient items like Refrigerator, Washing machine, LED lights, etc."
-    message_three = "The last day to *redeem is by today*, and voucher is *valid for 3 years*."
-    message_four = "Visit https://signup.redeem.gov.sg/?lang=en-US to verify your eligibility and redeem your voucher if interested. "
-    message_five = "Visit https://www.climate-friendly-households.gov.sg/cv-faqs/ to clarify all your doubts."
-    message_six = "Only HDB flat owners are eligible. Log in and claim voucher today. Can be used later."
+    message_one = "[15-May, Wed] Brace Yourself! The Ultimate Showdown - Traditional Braces VS Invisalign!"
+    message_two = "Join us on World Orthodontics Day, May 15th, for an enlightening webinar tailored to young professionals contemplating orthodontic treatment. Delve into the realm of orthodontics with Dr Aaron Hoo, Clinical Director and Lead Dentist at Newlife Dental Practice. In this interactive session, we will cover:"
+    message_three = "Unlock the secrets of a confident smile"
+    message_four = "Demystify traditional braces"
+    message_five = "Embrace the Invisalign revolution"
+    message_six = "Make the perfect choice: Traditional braces vs Invisalign"
+    message_seven = "Registration is now open."
+    message_eight = "https://iammerlin.co/ipreciate/Mizi_khamsani"
     
-    # message_box.send_keys(message_one)
-    # message_box.send_keys(" ")
-    # emoji_sad()
-    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    emoji_new()
+    message_box.send_keys(" ")
+    message_box.send_keys(message_one)
+    message_box.send_keys(" ")
+    emoji_bigsmile()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_two)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    emoji_tooth()
+    message_box.send_keys(" ")
     message_box.send_keys(message_three)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    emoji_tooth()
+    message_box.send_keys(" ")
     message_box.send_keys(message_four)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    emoji_tooth()
+    message_box.send_keys(" ")
     message_box.send_keys(message_five)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    emoji_tooth()
+    message_box.send_keys(" ")
     message_box.send_keys(message_six)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    emoji_lightbulb()
+    message_box.send_keys(" ")
+    message_box.send_keys(message_seven)
+    emoji_geek()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    message_box.send_keys(message_eight)
 
     if not attachment_one:
         print("No file to sent")
