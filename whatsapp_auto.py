@@ -19,7 +19,7 @@ wait=WebDriverWait(driver,100)
 ######################################## Variables ########################################
 
 contact_dict = {}
-with open('testgroup.txt') as f:
+with open('groupnames.txt') as f:
     for line in f:
         key, value = line.strip().split(', ') 
         contact_dict[key] = int(value) # Value is the number of clients in the group
@@ -177,7 +177,7 @@ for key, value in contact_dict.items():
     message_four = "Demystify traditional braces"
     message_five = "Embrace the Invisalign revolution"
     message_six = "Make the perfect choice: Traditional braces vs Invisalign"
-    message_seven = "Registration is now open."
+    message_seven = "Claim your spot now!"
     message_eight = "https://iammerlin.co/ipreciate/Mizi_khamsani"
     
     emoji_new()
@@ -212,13 +212,13 @@ for key, value in contact_dict.items():
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
 
-    emoji_lightbulb()
-    message_box.send_keys(" ")
+    # emoji_lightbulb()
+    # message_box.send_keys(" ")
     message_box.send_keys(message_seven)
-    emoji_geek()
+    # emoji_geek()
+    emoji_pointdown()
     message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-
+    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
     message_box.send_keys(message_eight)
 
     if not attachment_one:
