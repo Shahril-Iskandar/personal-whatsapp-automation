@@ -3,9 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
 import time
 from emoji import WhatsappEmoji
+from utils import search_box, search_group_name, search_message_box, tag_clients, new_paragraph, send_attachment
 
 dir_path = os.getcwd()
 options = webdriver.ChromeOptions()
@@ -32,145 +32,38 @@ attachment_two = ""
 ######################################## Sending message ########################################
 for key, value in contact_dict.items():
     # Find the search box, click the search box, type the name of the group, click the group
-    search_box_path='//*[@id="side"]/div[1]/div/div[2]/div[2]/div/div[1]/p' # Find the search box element
-    search_box = wait.until(EC.presence_of_element_located((By.XPATH, search_box_path)))
-    search_box.click() # Click on search box
-    search_box.send_keys(key) # Type the group name in the search box, without quotes
-    time.sleep(1)
-
-    group_name = f'"{key}"' # Put quotes around the group name
-    chat_name_path = '//span[contains(@title,'+ group_name + ')]' # Find the chat name element, need to have "" around the group name
-    chat_name = wait.until(EC.presence_of_element_located((By.XPATH, chat_name_path)))
-    chat_name.click()
-    time.sleep(1)
-
-    message_box_path = '//div[@aria-label="Type a message"]' # Alternatively = '//div[@title="Type a message"]'
-    message_box = wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
+    search_box(wait, key)
+    search_group_name(wait, key)
+    message_box = search_message_box(wait)
 
     emoji = WhatsappEmoji(message_box)
 
     # documents_path = '//input[@accept="*"]'
     # documents_box = wait.until(EC.presence_of_element_located((By.XPATH,documents_path)))
 
-    message_box.click() # Click on message box
     message_box.send_keys("Hi ")
-    # message_box.send_keys("Hi " + "@" + Keys.ARROW_DOWN + Keys.ENTER) # Tag person: For one person other than Mizi
-    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
 
-    if value == 1:
-        message_box.send_keys("@")
-        message_box.send_keys(Keys.ARROW_DOWN + Keys.ENTER)
-    elif value == 2: # (2 clients in group excluding Mizi and you)
-        message_box.send_keys("@")
-        message_box.send_keys(Keys.ARROW_DOWN + Keys.ENTER)
-        message_box.send_keys("@")
-        message_box.send_keys(Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ENTER)
-    elif value == 3:
-        message_box.send_keys("@")
-        message_box.send_keys(Keys.ARROW_DOWN + Keys.ENTER)
-        message_box.send_keys("@")
-        message_box.send_keys(Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ENTER)    
-        message_box.send_keys("@")
-        message_box.send_keys(Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ARROW_DOWN + Keys.ENTER)   
+    tag_clients(value, message_box)
 
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    new_paragraph(message_box)
     ######################################## Message ########################################
     message_one = "[15-May, Wed] Brace Yourself! The Ultimate Showdown - Traditional Braces VS Invisalign!"
-    message_two = "Join us on World Orthodontics Day, May 15th, for an enlightening webinar tailored to young professionals contemplating orthodontic treatment. Delve into the realm of orthodontics with Dr Aaron Hoo, Clinical Director and Lead Dentist at Newlife Dental Practice. In this interactive session, we will cover:"
-    message_three = "Unlock the secrets of a confident smile"
-    message_four = "Demystify traditional braces"
-    message_five = "Embrace the Invisalign revolution"
-    message_six = "Make the perfect choice: Traditional braces vs Invisalign"
-    message_seven = "Claim your spot now!"
-    message_eight = "https://iammerlin.co/ipreciate/Mizi_khamsani"
+    message_two = "Join us on World Orthodontics Day, May 15th, for an enlightening webinar tailored to young professionals contemplating orthodontic treatment."
     
     emoji.emoji_new()
     message_box.send_keys(" ")
     message_box.send_keys(message_one)
     message_box.send_keys(" ")
     emoji.emoji_bigsmile()
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    new_paragraph(message_box)
     message_box.send_keys(message_two)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    new_paragraph(message_box)
 
-    emoji.emoji_tooth()
-    message_box.send_keys(" ")
-    message_box.send_keys(message_three)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-
-    emoji.emoji_tooth()
-    message_box.send_keys(" ")
-    message_box.send_keys(message_four)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-
-    emoji.emoji_tooth()
-    message_box.send_keys(" ")
-    message_box.send_keys(message_five)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-
-    emoji.emoji_tooth()
-    message_box.send_keys(" ")
-    message_box.send_keys(message_six)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-
-    # emoji_lightbulb()
-    # message_box.send_keys(" ")
-    message_box.send_keys(message_seven)
-    # emoji_geek()
-    emoji.emoji_pointdown()
-    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    # message_box.send_keys(Keys.SHIFT + Keys.ENTER)
-    message_box.send_keys(message_eight)
-
-    if not attachment_one:
-        print("No file to sent")
-        message_box.send_keys(Keys.ENTER) # Submit
-    else:
-        # Add attachment
-        attachment_path = '//span[@data-icon="attach-menu-plus"]'
-        attachment_box = wait.until(EC.presence_of_element_located((By.XPATH,attachment_path)))
-        attachment_box.click()
-        time.sleep(1)
-        # Add image
-        images_path = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
-        # images_path = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/ul/div/div[2]/li/div/input'
-        images_box = wait.until(EC.presence_of_element_located((By.XPATH,images_path)))
-        images_box.send_keys(attachment_one)
-        time.sleep(3)
-        # sent_image_path = '//div[@class="g0rxnol2"]'
-        sent_image_path = '//span[@data-icon="send"]'
-        sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
-        sent_image.click()
-
-    # Send another attachment
-    # if not attachment_two:
-    #     print("No file to sent")
-    #     message_box.send_keys(Keys.ENTER) # Submit
-    # else:
-    #     # Add attachment
-    #     attachment_path = '//span[@data-icon="attach-menu-plus"]'
-    #     attachment_box = wait.until(EC.presence_of_element_located((By.XPATH,attachment_path)))
-    #     attachment_box.click()
-    #     time.sleep(1)
-    #     # Add image
-    #     images_path = '//input[@accept="image/*,video/mp4,video/3gpp,video/quicktime"]'
-    #     # images_path = '//*[@id="main"]/footer/div[1]/div/span[2]/div/div[1]/div[2]/div/span/div/ul/div/div[2]/li/div/input'
-    #     images_box = wait.until(EC.presence_of_element_located((By.XPATH,images_path)))
-    #     images_box.send_keys(attachment_two)
-    #     time.sleep(3)
-    #     # sent_image_path = '//div[@class="g0rxnol2"]'
-    #     sent_image_path = '//span[@data-icon="send"]'
-    #     sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
-    #     sent_image.click()
-
-    # message_box.send_keys("Here's the program outline and more details of the exclusive perks for attendees.")
-
+    send_attachment(wait, message_box, attachment_one)
+    send_attachment(wait, message_box, attachment_two)
+    
     print('Message send to ' + key + ' successfully.')
+
     # Back icon
     back_path = '//span[@data-icon="search"]'
     back_icon = wait.until(EC.presence_of_element_located((By.XPATH,back_path)))
