@@ -1,0 +1,30 @@
+2024/05/20-18:40:54.011 df8 Reusing MANIFEST C:\Users\14000\Documents\GitHub Repositories\fmz-whatsapp\profile2\wpp2\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/MANIFEST-000001
+2024/05/20-18:40:54.012 df8 Recovering log #58
+2024/05/20-18:40:54.048 df8 Reusing old log C:\Users\14000\Documents\GitHub Repositories\fmz-whatsapp\profile2\wpp2\Default\IndexedDB\https_web.whatsapp.com_0.indexeddb.leveldb/000058.log 
+2024/05/20-18:40:54.049 df8 Delete type=2 #56
+2024/05/20-18:40:54.049 df8 Delete type=2 #57
+2024/05/20-18:40:54.049 df8 Delete type=2 #59
+2024/05/20-18:40:54.520 3620 Level-0 table #65: started
+2024/05/20-18:40:54.532 3620 Level-0 table #65: 324094 bytes OK
+2024/05/20-18:40:54.533 3620 Delete type=0 #58
+2024/05/20-18:40:54.534 3620 Manual compaction at level-0 from '\x00\x16\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x17\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/05/20-18:40:54.539 38a0 Level-0 table #67: started
+2024/05/20-18:40:54.543 38a0 Level-0 table #67: 502 bytes OK
+2024/05/20-18:40:54.544 38a0 Delete type=0 #64
+2024/05/20-18:40:54.545 38a0 Manual compaction at level-0 from '\x00\x17\x00\x00\x00' @ 72057594037927935 : 1 .. '\x00\x18\x00\x00\x00' @ 0 : 0; will stop at '\x00\x17\x00\x00\x05' @ 280696 : 0
+2024/05/20-18:40:54.545 38a0 Compacting 1@0 + 1@1 files
+2024/05/20-18:40:54.560 38a0 Generated table #68@0: 10604 keys, 196011 bytes
+2024/05/20-18:40:54.560 38a0 Compacted 1@0 + 1@1 files => 196011 bytes
+2024/05/20-18:40:54.561 38a0 compacted to: files[ 0 1 3 0 0 0 0 ]
+2024/05/20-18:40:54.562 38a0 Delete type=2 #67
+2024/05/20-18:40:54.563 38a0 Manual compaction at level-0 from '\x00\x17\x00\x00\x05' @ 280696 : 0 .. '\x00\x18\x00\x00\x00' @ 0 : 0; will stop at (end)
+2024/05/20-18:40:55.843 df8 Compacting 1@1 + 2@2 files
+2024/05/20-18:40:55.914 df8 Generated table #69@1: 25393 keys, 2180816 bytes
+2024/05/20-18:40:56.049 df8 Generated table #70@1: 34151 keys, 2212448 bytes
+2024/05/20-18:40:56.059 df8 Generated table #71@1: 7294 keys, 148270 bytes
+2024/05/20-18:40:56.060 df8 Compacted 1@1 + 2@2 files => 4541534 bytes
+2024/05/20-18:40:56.060 df8 compacted to: files[ 0 0 4 0 0 0 0 ]
+2024/05/20-18:40:56.061 df8 Delete type=2 #60
+2024/05/20-18:40:56.061 df8 Delete type=2 #61
+2024/05/20-18:40:56.061 df8 Delete type=2 #65
+2024/05/20-18:40:56.061 df8 Delete type=2 #68

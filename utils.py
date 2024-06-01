@@ -25,12 +25,19 @@ def search_group_name(wait, key):
 
 def search_message_box(wait):
     '''
-    Search for the message box in after clicking the group, using xpath and return the message box element to use further.
+    Get the message box element to use further.
     '''
     message_box_path = '//div[@aria-label="Type a message"]' # Alternatively = '//div[@title="Type a message"]'
     message_box = wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
-    message_box.click() # Click on message box
     return message_box
+
+# def use_message_box(message_box):
+#     '''
+#     Search for the message box in after clicking the group, using xpath and return the message box element to use further.
+#     '''
+#     # message_box_path = '//div[@aria-label="Type a message"]' # Alternatively = '//div[@title="Type a message"]'
+#     # message_box = wait.until(EC.presence_of_element_located((By.XPATH,message_box_path)))
+#     message_box.click() # Click on message box
 
 def tag_clients(value, message_box):
     '''
@@ -81,3 +88,9 @@ def send_attachment(wait, message_box, attachment):
         sent_image_path = '//span[@data-icon="send"]'
         sent_image = wait.until(EC.presence_of_element_located((By.XPATH,sent_image_path)))
         sent_image.click()
+
+def click_back(wait):
+    back_path = '//span[@data-icon="search"]'
+    back_icon = wait.until(EC.presence_of_element_located((By.XPATH,back_path)))
+    back_icon.click()
+    time.sleep(1)

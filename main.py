@@ -1,33 +1,31 @@
 import os
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.common.by import By
-import time
+from selenium.webdriver.common.keys import Keys
 from emoji import WhatsappEmoji
-from utils import search_box, search_group_name, search_message_box, tag_clients, new_paragraph, send_attachment
+from utils import search_box, search_group_name, search_message_box, tag_clients, new_paragraph, send_attachment, click_back
+import message
 
 dir_path = os.getcwd()
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
 
-profile = os.path.join(dir_path, "profile", "wpp")
+profile = os.path.join(dir_path, "profile", "wpp") # RED Profile
+# profile = os.path.join(dir_path, "profile2", "wpp2") # Main phone
 options.add_argument(r"user-data-dir={}".format(profile))
 driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com")
 wait=WebDriverWait(driver,100)
 
 ######################################## Variables ########################################
-
 contact_dict = {}
-with open('testgroup.txt') as f:
+
+with open("groupnames.txt") as f: # Change the file name accordingly
     for line in f:
         key, value = line.strip().split(', ') 
         contact_dict[key] = int(value) # Value is the number of clients in the group
 
 # contact_list_2 = [f'"{item}"' for item in contact_list]
-attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_braces.jpg"
-attachment_two = ""
 
 ######################################## Sending message ########################################
 for key, value in contact_dict.items():
@@ -35,37 +33,48 @@ for key, value in contact_dict.items():
     search_box(wait, key)
     search_group_name(wait, key)
     message_box = search_message_box(wait)
-
     emoji = WhatsappEmoji(message_box)
 
     # documents_path = '//input[@accept="*"]'
     # documents_box = wait.until(EC.presence_of_element_located((By.XPATH,documents_path)))
 
-    message_box.send_keys("Hi ")
+    ######################################## Message ########################################
+    message_box.send_keys("Salam ")
 
     tag_clients(value, message_box)
 
+    emoji.emoji_smiley()
+    message_box.send_keys(",")
+
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+    message_box.send_keys(message.text_one)
     new_paragraph(message_box)
-    ######################################## Message ########################################
-    message_one = "[15-May, Wed] Brace Yourself! The Ultimate Showdown - Traditional Braces VS Invisalign!"
-    message_two = "Join us on World Orthodontics Day, May 15th, for an enlightening webinar tailored to young professionals contemplating orthodontic treatment."
-    
-    emoji.emoji_new()
+    message_box.send_keys(message.text_two)
+
+    emoji.emoji_sheep()
     message_box.send_keys(" ")
-    message_box.send_keys(message_one)
-    message_box.send_keys(" ")
-    emoji.emoji_bigsmile()
-    new_paragraph(message_box)
-    message_box.send_keys(message_two)
+    emoji.emoji_cow()
+
     new_paragraph(message_box)
 
-    send_attachment(wait, message_box, attachment_one)
-    send_attachment(wait, message_box, attachment_two)
+    message_box.send_keys(message.text_three)
+
+    new_paragraph(message_box)
+
+    message_box.send_keys(message.text_four)
+
+    new_paragraph(message_box)
+
+    message_box.send_keys(message.text_five)
+    emoji.emoji_pointdown()
+    message_box.send_keys(Keys.SHIFT + Keys.ENTER)
+
+    message_box.send_keys(message.text_six)
+
+    send_attachment(wait, message_box, message.attachment_one)
+    # send_attachment(wait, message_box, message.attachment_two)
     
     print('Message send to ' + key + ' successfully.')
 
     # Back icon
-    back_path = '//span[@data-icon="search"]'
-    back_icon = wait.until(EC.presence_of_element_located((By.XPATH,back_path)))
-    back_icon.click()
-    time.sleep(1)
+    click_back(wait)

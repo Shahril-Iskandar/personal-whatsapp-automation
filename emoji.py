@@ -100,3 +100,11 @@ class WhatsappEmoji:
     def emoji_tooth(self):
         self.message_box.send_keys(":tooth" + Keys.ENTER)
         time.sleep(.5)
+    
+    # 🐑
+    def emoji_sheep(self):
+        self.message_box.send_keys(":sheep" + Keys.ARROW_RIGHT + Keys.ENTER)
+
+    # 🐄
+    def emoji_cow(self):
+        self.message_box.send_keys(":cow" + Keys.ENTER)
