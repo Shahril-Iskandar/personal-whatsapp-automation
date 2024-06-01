@@ -11,10 +11,10 @@ The existing WhatsApp broadcast feature necessitates that both parties save each
 
 ## Usage Instructions
 ### Step 1: Prepare Your Contact List
-1. Create a text file containing the group names followed by a comma and the number of people to tag. See example in `testgroup.txt`
+1. Create a text file containing the group names and number of people to tag. See example in `testgroup.txt`.
 
 ### Step 2: Customize Your Message
-1. Open message.py.
+1. Open `message.py`.
 2. Edit the file to include any attachment path and your desired message. Each new line in `message.py` should be a new variable string to form a paragraph.
 
 ### Step 3: Add New Emojis (Optional)
