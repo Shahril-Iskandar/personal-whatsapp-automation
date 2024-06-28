@@ -1,5 +1,5 @@
 # Change the path of the attachment accordingly
-attachment_one = "C:\\Users\\14000\\Downloads\\FMZ\\EDM\\korban.jpeg" # example = C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_braces.jpg
+attachment_one = "/Users/shahriliskandar/Documents/Work/FMZ/EDM/korban.jpeg" # example = C:\\Users\\14000\\Downloads\\FMZ\\EDM\\poster_braces.jpg
 attachment_two = ""
 
 # Change the text accordingly, add new variables if needed

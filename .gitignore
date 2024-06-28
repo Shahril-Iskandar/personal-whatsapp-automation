@@ -1,7 +1,6 @@
-.conda/
-.venv/
-profile/
-profile2/
+env/
 __pycache__/
+profile_red/
+profile_main/
 groupnames.txt
 message.txt

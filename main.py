@@ -1,5 +1,6 @@
 import os
 from selenium import webdriver
+# from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.keys import Keys
 from emoji import WhatsappEmoji
@@ -10,9 +11,16 @@ dir_path = os.getcwd()
 options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
 
-profile = os.path.join(dir_path, "profile", "wpp") # RED Profile
-# profile = os.path.join(dir_path, "profile2", "wpp2") # Main phone
-options.add_argument(r"user-data-dir={}".format(profile))
+profile_red = os.path.join(dir_path, "profile_red", "wpp") # RED Profile
+profile_main = os.path.join(dir_path, "profile_main", "wpp") # Main phone
+
+profile_to_use = "red" # Select the profile to use
+
+if profile_to_use == "red":
+    options.add_argument(r"user-data-dir={}".format(profile_red))
+else:
+    options.add_argument(r"user-data-dir={}".format(profile_main))
+
 driver = webdriver.Chrome(options=options)
 driver.get("https://web.whatsapp.com")
 wait=WebDriverWait(driver,100)
@@ -20,7 +28,7 @@ wait=WebDriverWait(driver,100)
 ######################################## Variables ########################################
 contact_dict = {}
 
-with open("groupnames.txt") as f: # Change the file name accordingly
+with open("testgroup.txt") as f: # Change the file name accordingly
     for line in f:
         key, value = line.strip().split(', ') 
         contact_dict[key] = int(value) # Value is the number of clients in the group
@@ -34,9 +42,6 @@ for key, value in contact_dict.items():
     search_group_name(wait, key)
     message_box = search_message_box(wait)
     emoji = WhatsappEmoji(message_box)
-
-    # documents_path = '//input[@accept="*"]'
-    # documents_box = wait.until(EC.presence_of_element_located((By.XPATH,documents_path)))
 
     ######################################## Message ########################################
     message_box.send_keys("Salam ")
@@ -78,3 +83,6 @@ for key, value in contact_dict.items():
 
     # Back icon
     click_back(wait)
+
+# time.sleep(5)
+# driver.quit()

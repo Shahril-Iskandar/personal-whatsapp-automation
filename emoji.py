@@ -12,7 +12,7 @@ class WhatsappEmoji:
         
     # 👇🏼
     def emoji_pointdown(self):
-        self.message_box.send_keys(":backhand")
+        self.message_box.send_keys(":point")
         time.sleep(.5)
         self.message_box.send_keys(Keys.ARROW_RIGHT*3 + Keys.ENTER) # backhand index pointing down
         time.sleep(.5)
